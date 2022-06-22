@@ -2,7 +2,7 @@
 
 App Flutter.
 
-## Getting Started
+## App Cartão de Visita
 
 Simples cartão de visita desenvolvido em Flutter.
 
