@@ -16,6 +16,7 @@ class MeuApp extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               CircleAvatar(
+                backgroundColor: Colors.purple,
                 backgroundImage: AssetImage('imagens/foto.png'),
                 radius: 50.0,
               ),
@@ -106,6 +107,63 @@ class MeuApp extends StatelessWidget {
                       fontSize: 20.0,
                     ),
                   ),
+                ),
+              ),
+              Container(
+                child: Row(
+                  children: const <Widget>[
+                    Expanded(
+                      child: ListTile(
+                        leading: CircleAvatar(
+                          backgroundColor: Colors.white,
+                          backgroundImage: AssetImage(
+                            'imagens/java.png',
+                          ),
+                          // radius: 50.0,
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: ListTile(
+                        leading: CircleAvatar(
+                          backgroundColor: Colors.white,
+                          backgroundImage: AssetImage('imagens/spring.png'),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: ListTile(
+                        leading: CircleAvatar(
+                          backgroundColor: Colors.white,
+                          backgroundImage: AssetImage('imagens/php.png'),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: ListTile(
+                        leading: CircleAvatar(
+                          backgroundColor: Colors.white,
+                          backgroundImage: AssetImage('imagens/laravel.png'),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: ListTile(
+                        leading: CircleAvatar(
+                          backgroundColor: Colors.white,
+                          backgroundImage: AssetImage('imagens/angular.png'),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: ListTile(
+                        leading: CircleAvatar(
+                          backgroundColor: Colors.white,
+                          backgroundImage: AssetImage('imagens/postgres.png'),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],
