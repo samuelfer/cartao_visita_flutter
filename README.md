@@ -1,6 +1,6 @@
 # sou_programador
 
-A new Flutter project.
+App Flutter.
 
 ## Getting Started
 
