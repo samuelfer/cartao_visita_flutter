@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,7 +12,7 @@ class MeuApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Color.fromARGB(255, 96, 4, 112),
+        backgroundColor: const Color.fromARGB(255, 96, 4, 112),
         body: SafeArea(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -20,25 +22,9 @@ class MeuApp extends StatelessWidget {
                 backgroundImage: AssetImage('imagens/foto.png'),
                 radius: 50.0,
               ),
-              Text(
-                'Samuel Fernandes',
-                style: TextStyle(
-                  fontSize: 40.0,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'LibreBaskerville',
-                ),
-              ),
-              Text(
-                'DESENVOLVEDOR FULLSTACK',
-                style: TextStyle(
-                  fontFamily: 'Source Sans Pro',
-                  color: Colors.purple.shade100,
-                  fontSize: 20.0,
-                  letterSpacing: 2.5,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+              gerarText('Samuel Fernandes', 'LibreBaskerville', 40.0, 0),
+              gerarText(
+                  'DESENVOLVEDOR FULLSTACK', 'Source Sans Pro', 20.0, 2.5),
               SizedBox(
                 height: 20.0,
                 width: 250.0,
@@ -71,7 +57,7 @@ class MeuApp extends StatelessWidget {
                 'https://github.com/samuelfer',
               ),
               Container(
-                margin: EdgeInsets.symmetric(vertical: 20.0),
+                margin: const EdgeInsets.symmetric(vertical: 20.0),
                 height: 100,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
@@ -130,6 +116,20 @@ class MeuApp extends StatelessWidget {
             fontSize: 20.0,
           ),
         ),
+      ),
+    );
+  }
+
+  Text gerarText(
+      String texto, String fontFamily, double fontSize, double letterSpacing) {
+    return Text(
+      texto,
+      style: TextStyle(
+        fontSize: fontSize,
+        color: Colors.white,
+        fontWeight: FontWeight.bold,
+        fontFamily: fontFamily,
+        letterSpacing: letterSpacing,
       ),
     );
   }
