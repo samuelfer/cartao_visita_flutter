@@ -110,59 +110,23 @@ class MeuApp extends StatelessWidget {
                 ),
               ),
               Container(
-                child: Row(
-                  children: const <Widget>[
-                    Expanded(
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          backgroundColor: Colors.white,
-                          backgroundImage: AssetImage(
-                            'imagens/java.png',
-                          ),
-                          // radius: 50.0,
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          backgroundColor: Colors.white,
-                          backgroundImage: AssetImage('imagens/spring.png'),
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          backgroundColor: Colors.white,
-                          backgroundImage: AssetImage('imagens/php.png'),
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          backgroundColor: Colors.white,
-                          backgroundImage: AssetImage('imagens/laravel.png'),
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          backgroundColor: Colors.white,
-                          backgroundImage: AssetImage('imagens/angular.png'),
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          backgroundColor: Colors.white,
-                          backgroundImage: AssetImage('imagens/postgres.png'),
-                        ),
-                      ),
-                    ),
+                margin: EdgeInsets.symmetric(vertical: 20.0),
+                height: 100,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: <Widget>[
+                    gerarStack('imagens/java.png'),
+                    gerarStack('imagens/spring.png'),
+                    gerarStack('imagens/php.png'),
+                    gerarStack('imagens/laravel.png'),
+                    gerarStack('imagens/angular.png'),
+                    gerarStack('imagens/html.png'),
+                    gerarStack('imagens/css.png'),
+                    gerarStack('imagens/javascript.png'),
+                    gerarStack('imagens/typescript.png'),
+                    gerarStack('imagens/nodejs.png'),
+                    gerarStack('imagens/mysql.png'),
+                    gerarStack('imagens/postgres.png'),
                   ],
                 ),
               ),
@@ -173,5 +137,19 @@ class MeuApp extends StatelessWidget {
     );
   }
 
-  // Widget _card() {}
+  Widget gerarStack(String imageStack) {
+    return Container(
+      margin: EdgeInsets.all(2),
+      width: 80,
+      alignment: Alignment.center,
+      child: ListTile(
+        leading: CircleAvatar(
+          backgroundColor: Colors.white,
+          backgroundImage: AssetImage(
+            imageStack,
+          ),
+        ),
+      ),
+    );
+  }
 }
