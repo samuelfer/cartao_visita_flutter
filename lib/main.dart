@@ -15,7 +15,7 @@ class MeuApp extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              CircleAvatar(
+              const CircleAvatar(
                 backgroundColor: Colors.purple,
                 backgroundImage: AssetImage('imagens/foto.png'),
                 radius: 50.0,
@@ -46,68 +46,29 @@ class MeuApp extends StatelessWidget {
                   color: Colors.purple.shade100,
                 ),
               ),
-              Card(
-                margin: EdgeInsets.symmetric(
-                  vertical: 10.0,
-                  horizontal: 25.0,
+              gerarCard(
+                const Icon(
+                  Icons.phone,
+                  size: 25.0,
+                  color: Colors.purple,
                 ),
-                child: ListTile(
-                  leading: Icon(
-                    Icons.phone,
-                    size: 25.0,
-                    color: Colors.purple,
-                  ),
-                  title: Text(
-                    '(83) 3263-1056',
-                    style: TextStyle(
-                      color: Colors.purple,
-                      fontFamily: 'Source Sans Pro',
-                      fontSize: 20.0,
-                    ),
-                  ),
-                ),
+                '(83) 3263-1056',
               ),
-              Card(
-                margin: EdgeInsets.symmetric(
-                  vertical: 10.0,
-                  horizontal: 25.0,
+              gerarCard(
+                const Icon(
+                  Icons.mail,
+                  size: 25.0,
+                  color: Colors.purple,
                 ),
-                child: ListTile(
-                  leading: Icon(
-                    Icons.mail,
-                    size: 25.0,
-                    color: Colors.purple,
-                  ),
-                  title: Text(
-                    'samuelfesant@gmail.com',
-                    style: TextStyle(
-                      color: Colors.purple,
-                      fontFamily: 'Source Sans Pro',
-                      fontSize: 20.0,
-                    ),
-                  ),
-                ),
+                'samuelfesant@gmail.com',
               ),
-              Card(
-                margin: EdgeInsets.symmetric(
-                  vertical: 10.0,
-                  horizontal: 25.0,
+              gerarCard(
+                const Icon(
+                  Icons.gite,
+                  size: 25.0,
+                  color: Colors.purple,
                 ),
-                child: ListTile(
-                  leading: Icon(
-                    Icons.gite,
-                    size: 25.0,
-                    color: Colors.purple,
-                  ),
-                  title: Text(
-                    'https://github.com/samuelfer',
-                    style: TextStyle(
-                      color: Colors.purple,
-                      fontFamily: 'Source Sans Pro',
-                      fontSize: 20.0,
-                    ),
-                  ),
-                ),
+                'https://github.com/samuelfer',
               ),
               Container(
                 margin: EdgeInsets.symmetric(vertical: 20.0),
@@ -139,7 +100,7 @@ class MeuApp extends StatelessWidget {
 
   Widget gerarStack(String imageStack) {
     return Container(
-      margin: EdgeInsets.all(2),
+      margin: const EdgeInsets.all(2),
       width: 80,
       alignment: Alignment.center,
       child: ListTile(
@@ -147,6 +108,26 @@ class MeuApp extends StatelessWidget {
           backgroundColor: Colors.white,
           backgroundImage: AssetImage(
             imageStack,
+          ),
+        ),
+      ),
+    );
+  }
+
+  Card gerarCard(Icon icon, String text) {
+    return Card(
+      margin: const EdgeInsets.symmetric(
+        vertical: 10.0,
+        horizontal: 25.0,
+      ),
+      child: ListTile(
+        leading: icon,
+        title: Text(
+          text,
+          style: const TextStyle(
+            color: Colors.purple,
+            fontFamily: 'Source Sans Pro',
+            fontSize: 20.0,
           ),
         ),
       ),

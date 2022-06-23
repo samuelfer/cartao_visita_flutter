@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.sou_programador">
    <application
-        android:label="sou_programador"
+        android:label="Cartão Virtual"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
